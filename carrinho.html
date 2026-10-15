@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho — ECO Studio</title>
+  <meta name="description" content="Revise seu carrinho e finalize a compra na ECO Studio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="carrinho">
+
+<div id="siteHeader"></div>
+
+<main id="top" class="page-main">
+  <div class="wrap">
+    <h1 class="page-title" id="cartTitle">Seu carrinho</h1>
+
+    <!-- Carrinho vazio -->
+    <div class="cart-empty-page" id="pageEmpty" hidden>
+      <p>Seu carrinho está vazio.</p>
+      <a class="btn btn-primary" href="index.html#catalogo">Ver as peças</a>
+    </div>
+
+    <!-- Itens + dados de entrega -->
+    <div class="checkout-layout" id="checkoutLayout" hidden>
+      <section class="co-items" aria-label="Itens do carrinho">
+        <div id="pageCartItems"></div>
+        <a class="co-continue" href="index.html#catalogo">Continuar comprando</a>
+      </section>
+
+      <aside class="co-side">
+        <h2>Resumo</h2>
+        <div class="co-totals">
+          <div class="co-row"><span>Subtotal</span><span id="coSubtotal">R$ 0,00</span></div>
+          <div class="co-row"><span>Frete</span><span id="coShipping">R$ 0,00</span></div>
+          <div class="co-row co-total"><span>Total</span><b id="coTotal">R$ 0,00</b></div>
+        </div>
+
+        <h2 class="co-h2">Dados para entrega</h2>
+        <form id="checkoutForm">
+          <div class="field"><label for="fName">Nome completo</label><input type="text" id="fName" required placeholder="Seu nome" autocomplete="name"></div>
+          <div class="field-row">
+            <div class="field"><label for="fPhone">Telefone</label><input type="tel" id="fPhone" required placeholder="(11) 90000-0000" autocomplete="tel"></div>
+            <div class="field"><label for="fCep">CEP</label><input type="text" id="fCep" required placeholder="00000-000" autocomplete="postal-code"></div>
+          </div>
+          <div class="field"><label for="fAddress">Endereço completo</label><input type="text" id="fAddress" required placeholder="Rua, número, bairro, cidade" autocomplete="street-address"></div>
+          <div class="field">
+            <label for="fPayment">Forma de pagamento</label>
+            <select id="fPayment"><option value="Pix">Pix</option><option value="Cartão de crédito">Cartão de crédito</option><option value="Boleto">Boleto</option></select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top:8px;">Confirmar pedido</button>
+        </form>
+      </aside>
+    </div>
+
+    <!-- Pedido confirmado -->
+    <div class="order-done" id="orderDone" hidden>
+      <div class="confirm-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h2>Pedido confirmado!</h2>
+      <p class="confirm-order">Número do pedido: <b id="orderNumber">#0000</b></p>
+      <div class="modal-summary" id="confirmSummary"></div>
+      <p class="confirm-note">Recebemos os dados do seu pedido. Em breve entramos em contato pelo telefone informado para confirmar pagamento e entrega.<br><br><em>Obs: esse checkout ainda não está ligado a um meio de pagamento real. É a estrutura pronta para plugar um gateway (Pix, cartão etc.) quando quiser.</em></p>
+      <a class="btn btn-outline btn-block" href="index.html">Voltar para a loja</a>
+    </div>
+  </div>
+</main>
+
+<div id="siteFooter"></div>
+<div id="siteOverlays"></div>
+
+<script src="layout.js"></script>
+<script src="script.js"></script>
+<script src="carrinho.js"></script>
+</body>
+</html>

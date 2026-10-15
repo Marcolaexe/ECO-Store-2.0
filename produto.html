@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peça — ECO Studio</title>
+  <meta name="description" content="Detalhes da peça ECO Studio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="produto">
+
+<div id="siteHeader"></div>
+
+<main id="top" class="page-main">
+  <div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Você está em">
+      <a href="index.html">Início</a>
+      <span aria-hidden="true">/</span>
+      <a href="index.html#catalogo" id="crumbCat">Catálogo</a>
+      <span aria-hidden="true">/</span>
+      <span id="crumbName">—</span>
+    </nav>
+
+    <!-- Detalhe da peça (preenchido pelo produto.js a partir do ?id= da URL) -->
+    <div class="product-detail" id="productDetail" hidden>
+      <div class="pd-gallery">
+        <div class="pd-main">
+          <span class="tag" id="pdBest" hidden>Mais vendido</span>
+          <img id="pdImage" src="" alt="">
+        </div>
+        <div class="pd-thumbs" id="pdThumbs"></div>
+      </div>
+
+      <div class="pd-info">
+        <h1 id="pdName">—</h1>
+        <div class="pd-price" id="pdPrice">—</div>
+        <div class="pd-installments" id="pdInstallments">—</div>
+        <p class="pd-desc" id="pdDesc">—</p>
+
+        <div class="pd-label">Tamanho</div>
+        <div class="size-row" id="pdSizes"></div>
+
+        <div class="pd-label">Quantidade</div>
+        <div class="qty-row">
+          <div class="qty-controls">
+            <button type="button" id="pdQDown" aria-label="Diminuir quantidade">−</button><span class="qty-val" id="pdQty">1</span><button type="button" id="pdQUp" aria-label="Aumentar quantidade">+</button>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-block" id="pdAdd" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+          Adicionar ao carrinho
+        </button>
+        <a class="pd-gocart" id="pdGoCart" href="carrinho.html" hidden>Ver carrinho e finalizar a compra</a>
+
+        <ul class="pd-notes">
+          <li>Troca em até 30 dias</li>
+          <li>Frete fixo de R$ 19,90 para todo o Brasil</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Peça não encontrada -->
+    <div class="pd-missing" id="productMissing" hidden>
+      <h1>Peça não encontrada</h1>
+      <p>Esse link não leva a nenhuma peça do catálogo. Talvez ela tenha saído de linha.</p>
+      <a class="btn btn-primary" href="index.html#catalogo">Ver o catálogo</a>
+    </div>
+
+    <!-- Outras peças -->
+    <section class="related" id="related" hidden>
+      <h2>Você também pode gostar</h2>
+      <div class="products-grid" id="relatedGrid"></div>
+    </section>
+
+  </div>
+</main>
+
+<div id="siteFooter"></div>
+<div id="siteOverlays"></div>
+
+<script src="layout.js"></script>
+<script src="script.js"></script>
+<script src="produto.js"></script>
+</body>
+</html>
